@@ -1,3 +1,3 @@
 # Prova
-Exercício de Igor
+Exercício de Igor Scapin Francisco Garcia
  
