@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="nome-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Jogos</title>
+</head>
+<body>
+    <form action="postGame" method="post">
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required>
+        
+        <label for="plataforma">Plataforma</label>
+        <input type="text" id="plataforma" name="plataforma" required>
+
+        <label for="preco">Preço</label>
+        <input type="number" id="preco" name="preco" required>
+
+        <label for="quantidade">Quantidade</label>
+        <input type="number" id="quantidade" name="quantidade" required>
+
+        <button type="submit">Add</button>
+    </form>
+    <table>
+        <h1>Jogos</h1>
+        <tr>
+            <th>Nome</th>
+            <th>Plataforma</th>
+            <th>Preço</th>
+            <th>Quantidade</th>
+        </tr>
+        {% for game in games %}
+        <tr>
+            <td>{{game["nome"]}}</td>
+            <td>{{game["plataforma"]}}</td>
+            <td>{{game["preco"]}}</td>
+            <td>{{game["quantidade"]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+<style> 
+    table {
+	border-collapse: collapse;
+    }
+  
+    td, th {
+	border: 1px solid #000000;
+	text-align: center;
+	padding: 8px;
+    }
+  
+    tr:nth-child(even) {
+	background-color: #dddddd;
+    }
+</style>
+</html>
